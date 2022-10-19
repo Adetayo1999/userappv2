@@ -4,7 +4,7 @@ import styles from "./header.module.css";
 
 export const Header = () => {
     return (
-        <header className={`${styles.header__container} p-4`}>
+        <header className={`${styles.header__container} p-4 mb-12 z-50`}>
             <Container>
                 <div className='flex justify-between items-center '>
                     {/* Safelybuy Logo */}
