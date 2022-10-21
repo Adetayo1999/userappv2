@@ -1,5 +1,5 @@
 .product__banner__image {
-    animation: changeOpacity 1s linear forwards;
+    animation: changeOpacity 2s linear forwards;
 }
 
 @keyframes changeOpacity {

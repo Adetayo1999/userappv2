@@ -42,7 +42,7 @@ export const ProductBanner = () => {
                 else newCount = prev + 1;
                 return newCount;
             });
-        }, 2000);
+        }, 6000);
 
         return () => {
             clearInterval(interval);

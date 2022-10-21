@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SafelybuyLogo } from "../../assets";
 import { Container } from "../container";
 import styles from "./header.module.css";
@@ -9,7 +10,11 @@ export const Header = () => {
                 <div className='flex justify-between items-center '>
                     {/* Safelybuy Logo */}
                     <div className=''>
-                        <SafelybuyLogo scale={1.15} />
+                        <Link href='/'>
+                            <a>
+                                <SafelybuyLogo scale={1.15} />
+                            </a>
+                        </Link>
                     </div>
 
                     <div className=''>
