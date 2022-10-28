@@ -135,9 +135,9 @@ const data = [
 
 export const Footer = () => {
     return (
-        <div className='bg-[#E3E3E3] h-[50vh] flex justify-center items-center py-5 px-3'>
+        <div className='bg-[#E3E3E3] min:h-[50vh] flex justify-center items-center py-5 px-3'>
             <Container>
-                <div className='flex justify-between'>
+                <div className='flex flex-col  gap-y-6 md:gap-y-0 md:flex-row justify-between'>
                     {data.map((item) => (
                         <div className='' key={item.id}>
                             <h5 className='text-[#000000] font-bold mb-2'>
@@ -156,7 +156,7 @@ export const Footer = () => {
                             </ul>
                         </div>
                     ))}
-                    <div className='flex flex-col gap-y-4'>
+                    <div className='flex flex-row gap-x-4  md:flex-col  md:gap-x-0  md:gap-y-4'>
                         <Link href='/'>
                             <a>
                                 <Image

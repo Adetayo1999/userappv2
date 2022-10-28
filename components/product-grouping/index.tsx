@@ -5,9 +5,9 @@ import styles from "./product-grouping.module.css";
 
 type ProductCardProps = {
     productImage: StaticImageData;
-    deliveryTime: string;
+    deliveryTime?: string;
     name: string;
-    price: number;
+    price?: number;
     distanceFromUser?: number | undefined;
     discount?: number | undefined;
     unique?: boolean;
@@ -32,7 +32,10 @@ const ProductCard = ({
 }: ProductCardProps) => {
     return (
         <div className='w-[16rem] overflow-hidden flex-shrink-0 relative cursor-pointer'>
-            <div className='rounded-md overflow-hidden mb-3'>
+            <div
+                className={`rounded-md h-[10rem] w-full flex justify-center items-center  overflow-hidden ${
+                    deliveryTime && "mb-3"
+                }`}>
                 <Image
                     src={productImage}
                     alt={name}
@@ -46,9 +49,11 @@ const ProductCard = ({
                         {distanceFromUser}KM away
                     </p>
                 )}
-                <p className='text-sm text-[#000000A6]'>
-                    {convertToNaira(price)}
-                </p>
+                {price && (
+                    <p className='text-sm text-[#000000A6]'>
+                        {convertToNaira(price)}
+                    </p>
+                )}
             </div>
             {discount && !unique && (
                 <div className='absolute bg-[#157145] text-[0.688rem] py-1 px-3 top-5 left-2 text-white rounded'>
@@ -60,14 +65,16 @@ const ProductCard = ({
                     Only on Safelybuy
                 </div>
             )}
-            <div
-                className='absolute bg-white  text-[0.688rem] rounded-md px-3 py-1 right-0 top-[9.2rem]'
-                style={{
-                    boxShadow:
-                        "0px 0px 3.5399px rgba(0, 0, 0, 0.04), 0px 3.5399px 7.07979px rgba(0, 0, 0, 0.06)",
-                }}>
-                {deliveryTime}
-            </div>
+            {deliveryTime && (
+                <div
+                    className='absolute bg-white  text-[0.688rem] rounded-md px-3 py-1 right-0 top-[9.2rem]'
+                    style={{
+                        boxShadow:
+                            "0px 0px 3.5399px rgba(0, 0, 0, 0.04), 0px 3.5399px 7.07979px rgba(0, 0, 0, 0.06)",
+                    }}>
+                    {deliveryTime}
+                </div>
+            )}
         </div>
     );
 };
@@ -121,4 +128,6 @@ ProductCard.defaultProps = {
     distanceFromUser: undefined,
     discount: undefined,
     unique: false,
+    deliveryTime: undefined,
+    price: undefined,
 };
