@@ -25,12 +25,12 @@ export const RestaurantMealView = ({
                 <div className='w-[25rem] h-[15.625rem] overflow-hidden'>
                     <Image
                         src={imageUrl}
-                        // className=''
                         objectFit='cover'
                         quality={100}
                         width={400}
                         height={240}
                         className='rounded-lg'
+                        alt={title}
                     />
                 </div>
                 <div className='flex flex-col gap-y-1'>

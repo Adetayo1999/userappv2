@@ -27,6 +27,7 @@ export const RestaurantBanner = ({
                     layout='fill'
                     objectFit='cover'
                     quality={100}
+                    alt='restautant banner'
                 />
             </div>
             <div className='w-full bg-[#F3F3F3]'>
