@@ -1,0 +1,16 @@
+.product__slider {
+    animation: scroll-to-right 15s infinite linear;
+}
+
+.product__slider:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-to-right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50vw);
+    }
+}

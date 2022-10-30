@@ -1,0 +1,13 @@
+.product__banner__image {
+    animation: changeOpacity 2s linear forwards;
+}
+
+@keyframes changeOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

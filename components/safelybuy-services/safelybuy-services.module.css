@@ -1,0 +1,24 @@
+.safelybuy__services__card {
+    animation: compressText 300ms linear forwards;
+}
+
+.safelybuy__services__card__inactive {
+    animation: enlargeText 300ms linear forwards;
+}
+
+@keyframes compressText {
+    to {
+        font-size: 1.375rem;
+        color: white;
+    }
+}
+
+@keyframes enlargeText {
+    from {
+        font-size: 1.375rem;
+        color: white;
+    }
+    to {
+        font-size: 3.125rem;
+    }
+}
