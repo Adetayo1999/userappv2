@@ -12,9 +12,9 @@ export const SlidingText = ({
     slidingTextColor,
 }: SlidingTextType) => {
     return (
-        <div className='overflow-hidden text-xl leading-10 text-[#000000] font-normal'>
-            <div className='overflow-hidden h-[2rem] px-4  flex justify-between items-start gap-x-5'>
-                <p className={`${styles.content__container__text}`}>
+        <div className='overflow-hidden text-sm md:text-xl leading-10 text-[#000000] font-normal text-center md:text-left'>
+            <div className='overflow-hidden h-[1.8rem] md:h-[2rem] px-4  flex justify-between items-start    md:gap-x-5'>
+                <p className={`${styles.content__container__text} mr-1`}>
                     {mainText}
                 </p>
 

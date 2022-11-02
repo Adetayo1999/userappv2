@@ -13,3 +13,7 @@
         background-color: #ffffff;
     }
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

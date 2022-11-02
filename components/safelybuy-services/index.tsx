@@ -96,12 +96,12 @@ const SafelybuyServicesCard = ({
                                     ? styles.safelybuy__services__card
                                     : styles.safelybuy__services__card__inactive
                             }
-                             text-[3.125rem] text-[#000000]
+                               text-[2rem]  md:text-[3.125rem] text-[#000000]
                     }  font-bold`}>
                     {title}
                 </h2>
                 <p
-                    className={`text-lg font-normal transition ${
+                    className={` text-sm md:text-lg font-normal transition ${
                         active ? "text-white" : "text-[#000000]"
                     }`}>
                     {active ? description : shortText}
@@ -144,8 +144,10 @@ export const SafelybuyServices = () => {
     return (
         <Container>
             <div className=''>
-                <h2 className='text-2xl font-bold mb-6'>Our Services</h2>
-                <div className='grid grid-cols-2 gap-6'>
+                <h2 className='text-lg sm:text-xl md:text-2xl font-bold mb-6'>
+                    Our Services
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {data.map(({ id, ...rest }) => (
                         <SafelybuyServicesCard key={id} {...rest} />
                     ))}

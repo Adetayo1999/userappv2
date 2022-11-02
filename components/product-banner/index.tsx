@@ -58,9 +58,9 @@ export const ProductBanner = () => {
                             key={item.title}
                             className={` ${
                                 index === counter ? "flex" : "hidden"
-                            } flex bg-[#F3F3F3] rounded-[2rem] overflow-hidden h-[22rem]`}>
-                            <div className='flex-[0.5] flex justify-center items-center flex-col gap-y-6 p-4'>
-                                <h2 className='font-medium text-5xl text-center w-[80%] leading-[4rem]'>
+                            } flex bg-[#F3F3F3] rounded-[2rem] flex-col md:flex-row overflow-hidden md:h-[22rem]`}>
+                            <div className='md:flex-[0.5] flex justify-center items-center flex-col  gap-y-4 md:gap-y-6 p-4  h-[14rem] md:h-full '>
+                                <h2 className='font-medium  text-xl md:text-5xl text-center w-[80%] md:leading-[4rem]'>
                                     {item.title}
                                 </h2>
                                 <button
@@ -71,7 +71,7 @@ export const ProductBanner = () => {
                                 </button>
                             </div>
                             <div
-                                className={`flex-[0.5] bg-black flex justify-center items-center ${styles.product__banner__image} `}>
+                                className={`md:flex-[0.5] bg-black flex  h-[18rem] md:h-full  justify-center items-center overflow-hidden ${styles.product__banner__image} `}>
                                 <Image
                                     src={item.imageSrc}
                                     alt={item.title}

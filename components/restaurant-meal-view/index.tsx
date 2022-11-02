@@ -21,8 +21,8 @@ export const RestaurantMealView = ({
 }: RestaurantMealViewProps) => {
     return (
         <Container>
-            <div className='flex gap-x-8 items-center'>
-                <div className='w-[25rem] h-[15.625rem] overflow-hidden'>
+            <div className='flex gap-x-8 flex-col md:flex-row md:items-center'>
+                <div className='md:w-[25rem] h-[15.625rem] overflow-hidden'>
                     <Image
                         src={imageUrl}
                         objectFit='cover'
@@ -31,6 +31,7 @@ export const RestaurantMealView = ({
                         height={240}
                         className='rounded-lg'
                         alt={title}
+                        layout='responsive'
                     />
                 </div>
                 <div className='flex flex-col gap-y-1'>
@@ -46,7 +47,7 @@ export const RestaurantMealView = ({
                         {convertToNaira(price)}
                     </p>
                     <div className='flex gap-x-3 items-center'>
-                        <button className='text-[#8661FF] font-medium text-sm bg-[#F3F3F3] rounded-full px-7 py-2'>
+                        <button className=' md:text-[#8661FF] font-medium text-sm md:bg-[#F3F3F3] rounded-full px-7 py-2 bg-[#9B51E0] text-white'>
                             Order Now
                         </button>
                         <button>

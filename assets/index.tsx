@@ -372,3 +372,24 @@ export const ShareIcon = ({ scale }: SVGProps) => {
         </svg>
     );
 };
+
+export const HamBurgerIcon = ({ scale }: SVGProps) => (
+    <svg
+        width={scale! * 16}
+        height={scale! * 11}
+        viewBox='0 0 16 11'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'>
+        <path
+            d='M1 1H14.75M1 5.375H14.75M1 9.75H14.75'
+            stroke='black'
+            strokeWidth='1.5'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+        />
+    </svg>
+);
+
+HamBurgerIcon.defaultProps = {
+    scale: 1,
+};

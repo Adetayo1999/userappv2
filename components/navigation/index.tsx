@@ -47,15 +47,20 @@ const NavigationButton = ({
     const [active, setActive] = useState(false);
 
     return (
-        <div className=''>
+        <div className='flex-shrink-0 md:flex-shrink  w-64 md:w-fit'>
             <Link href={path}>
                 <a
-                    className='flex justify-center items-center bg-[#E6E6E680] bg-opacity-50 mb-2 w-full p-7  relative rounded-lg overflow-hidden'
+                    className='flex justify-center items-center bg-[#E6E6E680] bg-opacity-50 mb-2 w-full p-5 md:p-7  relative rounded-lg overflow-hidden'
                     onMouseEnter={() => setActive(true)}
                     onMouseLeave={() => setActive(false)}>
                     <div className='flex gap-x-4 justify-center items-center'>
-                        <Icon />
-                        <span className='text-[#06192D] text-2xl font-medium'>
+                        <span className='hidden md:inline'>
+                            <Icon />
+                        </span>
+                        <span className='inline md:hidden'>
+                            <Icon scale={0.7} />
+                        </span>
+                        <span className='text-[#06192D] text-xl md:text-2xl font-medium'>
                             {title}
                         </span>
                     </div>
@@ -63,14 +68,14 @@ const NavigationButton = ({
                     <div
                         className={`absolute top-10 -right-12 transition ${
                             active && "-translate-y-5 duration-500"
-                        }`}>
+                        } hidden md:block`}>
                         <Icon color='#ffffff' scale={3} active={active} />
                     </div>
                 </a>
             </Link>
-            <p className='text-[#00000059]  text-sm '>
+            <p className='text-[#00000059]  text-sm  hidden md:inline'>
                 <b className='font-medium text-[#4F4F4F]'> Click this card </b>
-                <span className=''>
+                <span>
                     to explore and order meals from best resurants we trust and
                     have them delivered to you!
                 </span>
@@ -82,7 +87,7 @@ const NavigationButton = ({
 export const Navigation = () => {
     return (
         <Container>
-            <div className='flex justify-between items-center gap-10'>
+            <div className='flex justify-between items-center gap-10 overflow-x-scroll md:overflow-hidden'>
                 {data.map(({ id, ...rest }) => (
                     <NavigationButton key={id} {...rest} />
                 ))}

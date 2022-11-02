@@ -22,9 +22,14 @@ export const ProductSlider = () => {
             <div className={`flex gap-x-4   ${styles.product__slider}`}>
                 {data.map((item, index) => (
                     <div
-                        className='flex-shrink-0 cursor-pointer'
+                        className='flex-shrink-0 cursor-pointer h-full  w-[14rem] md:w-[18.75rem]'
                         key={`safelybuy-image-${index}`}>
-                        <Image src={item} alt='Safelybuy Product' />
+                        <Image
+                            src={item}
+                            alt='Safelybuy Product'
+                            layout='responsive'
+                            objectFit='contain'
+                        />
                     </div>
                 ))}
             </div>
