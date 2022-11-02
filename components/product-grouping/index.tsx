@@ -31,10 +31,10 @@ const ProductCard = ({
     unique,
 }: ProductCardProps) => {
     return (
-        <div className='w-[16rem] overflow-hidden flex-shrink-0 relative cursor-pointer'>
+        <div className=' w-[14rem] md:w-[16rem] overflow-hidden flex-shrink-0 relative cursor-pointer'>
             <div
-                className={`rounded-md h-[10rem] w-full flex justify-center items-center  overflow-hidden ${
-                    deliveryTime && "mb-3"
+                className={`rounded-md h-[9rem] md:h-[10rem] w-full flex justify-center items-center  overflow-hidden ${
+                    deliveryTime && " mb-2 md:mb-3"
                 }`}>
                 <Image
                     src={productImage}
@@ -43,14 +43,16 @@ const ProductCard = ({
                 />
             </div>
             <div className=''>
-                <h4 className='font-medium text-[#000000] truncate'>{name}</h4>
+                <h4 className='md:font-medium text-[#000000] truncate text-sm md:text-base font-bold'>
+                    {name}
+                </h4>
                 {distanceFromUser && (
-                    <p className='text-sm text-[#000000A6]'>
+                    <p className=' text-xs md:text-sm text-[#000000A6]'>
                         {distanceFromUser}KM away
                     </p>
                 )}
                 {price && (
-                    <p className='text-sm text-[#000000A6]'>
+                    <p className='text-xs md:text-sm text-[#000000A6]'>
                         {convertToNaira(price)}
                     </p>
                 )}
@@ -67,7 +69,7 @@ const ProductCard = ({
             )}
             {deliveryTime && (
                 <div
-                    className='absolute bg-white  text-[0.688rem] rounded-md px-3 py-1 right-0 top-[9.2rem]'
+                    className='absolute bg-white  text-[0.688rem] rounded-md px-3 py-1 right-0 md:top-[9.2rem] top-[7.8rem]'
                     style={{
                         boxShadow:
                             "0px 0px 3.5399px rgba(0, 0, 0, 0.04), 0px 3.5399px 7.07979px rgba(0, 0, 0, 0.06)",
@@ -89,13 +91,15 @@ export const ProductGrouping = ({
             {/* Product Grouping Header */}
             <div className='flex justify-between items-center mb-4'>
                 <div className=''>
-                    <h2 className='text-[#06192D] font-bold text-2xl'>
+                    <h2 className='text-[#06192D] font-bold text-xl md:text-2xl'>
                         {title}
                     </h2>
-                    <p className='text-[#000000B2] text-sm'>{description}</p>
+                    <p className='text-[#000000B2]  text-xs md:text-sm'>
+                        {description}
+                    </p>
                 </div>
                 <div className=''>
-                    <button className='text-[#8661FF] font-medium text-sm'>
+                    <button className='text-[#8661FF] font-medium text-xs md:text-sm'>
                         View all
                     </button>
                 </div>

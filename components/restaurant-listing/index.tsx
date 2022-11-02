@@ -16,7 +16,7 @@ export const RestaurantListing = () => {
     return (
         <Container>
             <div className='mb-16'>
-                <div className='flex justify-between items-center mb-9'>
+                <div className='flex justify-between items-center overflow-scroll mb-9 gap-x-4 md:gap-x-0'>
                     {RESTAURANT_VARIETIES.map((item, index) => (
                         <button
                             key={item}
@@ -24,7 +24,7 @@ export const RestaurantListing = () => {
                                 index === 0
                                     ? "bg-[#F3F3F3] text-[#000000]"
                                     : "text-[#000000B2]"
-                            } rounded-md text-sm px-3 py-1`}>
+                            } rounded-md text-sm px-3 py-1 flex-shrink-0`}>
                             {item}
                         </button>
                     ))}

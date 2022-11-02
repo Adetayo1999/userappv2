@@ -50,14 +50,17 @@ const WhySafelybuyCard = ({
                     src={image}
                     alt={title}
                     className='rounded-md w-full h-full object-cover hover:scale-105 transition duration-300'
+                    layout='responsive'
                 />
-                <div className='absolute top-[50%] left-[8%] w-[50%]  translate-y-[-50%] pointer-events-none'>
+                <div className='absolute top-[50%] left-[8%] w-[50%]  translate-y-[-50%] pointer-events-none text-sm sm:text-base'>
                     <p className='font-inter  text-[#F5F5F5]'>{subTitle}</p>
                 </div>
             </div>
-            <div className='flex flex-col gap-y-2'>
-                <h4 className='font-semibold text-lg'>{title}</h4>
-                <p className='text-sm  text-[#000000A6]'>{description}</p>
+            <div className='flex flex-col gap-y-2 mt-2 sm:mt-0 '>
+                <h4 className='font-semibold text-base  sm:text-lg'>{title}</h4>
+                <p className='text-xs sm:text-sm  text-[#000000A6]'>
+                    {description}
+                </p>
             </div>
         </div>
     );
@@ -67,10 +70,10 @@ export const WhySafelybuy = () => {
     return (
         <Container>
             <div className=''>
-                <h2 className='text-2xl font-bold mb-6'>
+                <h2 className=' text-lg sm:text-xl md:text-2xl font-bold mb-6'>
                     Reasons you really should fund your SafelyBuy Wallet
                 </h2>
-                <div className='flex justify-between items-center gap-8'>
+                <div className='flex flex-col md:flex-row justify-between items-center gap-8'>
                     {data.map(({ id, ...rest }) => (
                         <WhySafelybuyCard key={id} {...rest} />
                     ))}

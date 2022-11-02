@@ -135,7 +135,7 @@ const data = [
 
 export const Footer = () => {
     return (
-        <div className='bg-[#E3E3E3] min:h-[50vh] flex justify-center items-center py-5 px-3'>
+        <div className='bg-[#E3E3E3] min:h-[50vh] flex justify-center items-center  py-5 md:py-8 px-3'>
             <Container>
                 <div className='flex flex-col  gap-y-6 md:gap-y-0 md:flex-row justify-between'>
                     {data.map((item) => (
