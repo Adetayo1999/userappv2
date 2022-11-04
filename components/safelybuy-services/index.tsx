@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, FoodIcon, TicketIcon, TradeIcon } from "../../assets";
 import { Container } from "../container";
@@ -14,7 +15,7 @@ const data = [
         color: "#EDE7FF",
         iconColor: "#8661FF33",
         activeColor: "#8661FF73",
-        clickHandler() {},
+        path: "/food",
     },
     {
         id: 2,
@@ -23,7 +24,7 @@ const data = [
         description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam minima accusantium iure autem molestiae impedit.",
         Icon: FoodIcon,
-        clickHandler() {},
+        path: "/food",
         color: "#EDE7FF",
         activeColor: "#8661FF73",
         iconColor: "#8661FF33",
@@ -35,7 +36,7 @@ const data = [
         description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam minima accusantium iure autem molestiae impedit.",
         Icon: TicketIcon,
-        clickHandler() {},
+        path: "/ticket",
         color: "#75CC9626",
         activeColor: "#75CC9673",
         iconColor: "#75CC964D",
@@ -47,7 +48,7 @@ const data = [
         description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam minima accusantium iure autem molestiae impedit.",
         Icon: TradeIcon,
-        clickHandler() {},
+        path: "/giftcard",
         color: "#F3F3F3",
         activeColor: "#40415473",
         iconColor: "#2B2D4240",
@@ -65,7 +66,7 @@ type SafelybuyServicesCardProps = {
         color?: string;
         activeColor?: string;
     }>;
-    clickHandler: () => void;
+    path: string;
     color: string;
     activeColor: string;
 };
@@ -73,12 +74,12 @@ type SafelybuyServicesCardProps = {
 const SafelybuyServicesCard = ({
     Icon,
     activeColor,
-    clickHandler,
     color,
     description,
     shortText,
     title,
     iconColor,
+    path,
 }: SafelybuyServicesCardProps) => {
     const [active, setActive] = useState(false);
 
@@ -108,22 +109,22 @@ const SafelybuyServicesCard = ({
                 </p>
             </div>
             <div className=''>
-                <button
-                    onClick={clickHandler}
-                    className='flex gap-x-3 items-center'>
-                    <span
-                        className={`${
-                            active ? "text-white" : "text-[#000000]"
-                        } transition text-sm`}>
-                        Get started
-                    </span>
-                    <span
-                        className={`transition  duration-200 ${
-                            active ? "translate-x-2" : "translate-x-0"
-                        } `}>
-                        <ArrowRight active={active} />
-                    </span>
-                </button>
+                <Link href={path}>
+                    <a className='flex gap-x-3 items-center'>
+                        <span
+                            className={`${
+                                active ? "text-white" : "text-[#000000]"
+                            } transition text-sm`}>
+                            Get started
+                        </span>
+                        <span
+                            className={`transition  duration-200 ${
+                                active ? "translate-x-2" : "translate-x-0"
+                            } `}>
+                            <ArrowRight active={active} />
+                        </span>
+                    </a>
+                </Link>
             </div>
             <div
                 className={`absolute -bottom-20 -right-11 transition duration-300 ${
