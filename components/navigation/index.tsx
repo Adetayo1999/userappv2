@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FoodIcon, TicketIcon, TradeIcon } from "../../assets";
 import { Container } from "../container";
 
@@ -23,7 +24,7 @@ const data = [
         title: "Trade",
         Icon: TradeIcon,
         clickHandler() {},
-        path: "/trade",
+        path: "/giftcard",
     },
 ];
 
@@ -38,13 +39,10 @@ type NavigationButtonProps = {
     clickHandler: () => void;
 };
 
-const NavigationButton = ({
-    title,
-    Icon,
-    clickHandler,
-    path,
-}: NavigationButtonProps) => {
+const NavigationButton = ({ title, Icon, path }: NavigationButtonProps) => {
     const [active, setActive] = useState(false);
+
+    const router = useRouter();
 
     return (
         <div className='flex-shrink-0 md:flex-shrink  w-64 md:w-fit'>
@@ -67,9 +65,14 @@ const NavigationButton = ({
 
                     <div
                         className={`absolute top-10 -right-12 transition ${
-                            active && "-translate-y-5 duration-500"
+                            (active || router.pathname === path) &&
+                            "-translate-y-5 duration-500"
                         } hidden md:block`}>
-                        <Icon color='#ffffff' scale={3} active={active} />
+                        <Icon
+                            color='#ffffff'
+                            scale={3}
+                            active={active || router.pathname === path}
+                        />
                     </div>
                 </a>
             </Link>
