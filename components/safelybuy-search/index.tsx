@@ -39,7 +39,7 @@ const SafelybuyProductSearchInput = ({
                 <p className='text-base font-normal text-[#000000A6] '>
                     {subTitle}
                 </p>
-                <div className='border rounded-full border-[#E0E0E0] md:w-[50%] w-full flex justify-between items-center gap-y-2 py-1 px-1  h-[2.5rem]  md:h-[3.2rem]'>
+                <div className='border rounded-full border-[#E0E0E0] md:w-[50%] w-full flex justify-between items-center gap-y-2 py-1 px-1  h-[2.5rem]  md:h-[3.8rem]'>
                     <input
                         type='text'
                         name=''
@@ -47,7 +47,7 @@ const SafelybuyProductSearchInput = ({
                         value={value}
                         onChange={handleChange}
                         placeholder={placeholderText}
-                        className='flex-1 bg-transparent outline-none pl-3 placeholder:[#06192D4D] text-sm md:text-base'
+                        className='flex-1 bg-transparent outline-none pl-3 placeholder:[#06192D4D] text-opacity-30 text-sm md:text-base'
                     />
                     <button className='bg-primary transition duration-150 opacity-50 hover:opacity-100 flex items-center justify-center rounded-full h-full py-2 px-4 gap-x-2 text-white'>
                         <span className='hidden md:inline'>
@@ -65,6 +65,33 @@ const SafelybuyProductSearchInput = ({
         </Container>
     );
 };
+
+const data = [
+    {
+        mainText: "A social and essential app you deserve",
+        changingTexts: [
+            " 🥗 Food Plan With Free Delivery 🥗",
+            " 🥗 Eat in And Take Outs 🥗",
+            " 🥗 Online Orders From Restaurants 🥗",
+        ],
+    },
+    {
+        mainText: "An essential app you deserve",
+        changingTexts: [
+            " 🚀 Food Plan With Free Delivery 🚀",
+            " 🚀 Eat in And Take Outs 🚀",
+            " 🚀 Online Orders From Restaurants 🚀",
+        ],
+    },
+    {
+        mainText: "A social and essential app you deserve",
+        changingTexts: [
+            " ❤ Food Plan With Free Delivery ❤",
+            " ❤ Eat in And Take Outs ❤",
+            " ❤ Online Orders From Restaurants ❤",
+        ],
+    },
+];
 
 export const SafelybuySearch = ({
     slidingText,
@@ -85,10 +112,7 @@ export const SafelybuySearch = ({
                     {title}
                 </h1>
                 <div className='hidden md:block'>
-                    <SlidingText
-                        carouselText={slidingText}
-                        mainText='Get an affordable and flexible '
-                    />
+                    <SlidingText carousel={data} />
                 </div>
             </div>
             {!hasSearchInput ? (

@@ -143,17 +143,19 @@ const SafelybuyServicesCard = ({
 
 export const SafelybuyServices = () => {
     return (
-        <Container>
-            <div className=''>
-                <h2 className='text-lg sm:text-xl md:text-2xl font-bold mb-6'>
-                    Our Services
-                </h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                    {data.map(({ id, ...rest }) => (
-                        <SafelybuyServicesCard key={id} {...rest} />
-                    ))}
+        <div className='mb-6'>
+            <Container>
+                <div className=''>
+                    <h2 className='text-lg sm:text-xl md:text-2xl font-bold mb-6'>
+                        Our Services
+                    </h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                        {data.map(({ id, ...rest }) => (
+                            <SafelybuyServicesCard key={id} {...rest} />
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
 };

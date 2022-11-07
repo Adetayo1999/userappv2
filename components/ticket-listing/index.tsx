@@ -8,7 +8,7 @@ export const TicketListing = () => {
     return (
         <Container>
             <div className='mb-16'>
-                <div className='flex justify-between items-center mb-9'>
+                <div className='flex justify-center items-center overflow-scroll mb-14 gap-x-4 md:gap-x-6'>
                     {TICKET_VARIETIES.map((item, index) => (
                         <button
                             key={item}
@@ -16,7 +16,7 @@ export const TicketListing = () => {
                                 index === 0
                                     ? "bg-[#F3F3F3] text-[#000000]"
                                     : "text-[#000000B2]"
-                            } rounded-md text-sm px-3 py-1`}>
+                            } rounded-md text-sm px-6 py-2 flex-shrink-0 font-inter hover:bg-[#f3f3f3]`}>
                             {item}
                         </button>
                     ))}
