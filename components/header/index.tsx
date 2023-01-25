@@ -9,7 +9,9 @@ export const Header = () => {
     const router = useRouter();
 
     return (
-        <header className={`${styles.header__container} p-4 mb-12 z-50`}>
+        <header
+            className={`${styles.header__container} p-4 mb-12 z-50`}
+            id='header'>
             <Container>
                 <div className='flex justify-between items-center '>
                     {/* Safelybuy Logo */}

@@ -64,10 +64,7 @@ const NavigationButton = ({ title, Icon, path }: NavigationButtonProps) => {
                     </div>
 
                     <div
-                        className={`absolute top-10 -right-12 transition ${
-                            (active || router.pathname === path) &&
-                            "-translate-y-5 duration-500"
-                        } hidden md:block`}>
+                        className={`absolute top-10 -right-12 transition  hidden md:block`}>
                         <Icon
                             color='#ffffff'
                             scale={3}
@@ -90,7 +87,7 @@ const NavigationButton = ({ title, Icon, path }: NavigationButtonProps) => {
 export const Navigation = () => {
     return (
         <Container>
-            <div className='flex justify-between items-center gap-10 overflow-x-scroll md:overflow-hidden'>
+            <div className='flex justify-between items-center gap-6 overflow-x-scroll md:overflow-hidden'>
                 {data.map(({ id, ...rest }) => (
                     <NavigationButton key={id} {...rest} />
                 ))}

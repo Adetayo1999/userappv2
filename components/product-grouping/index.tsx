@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
-import { ArrowRight } from "../../assets";
+import { BaArrowIcon } from "../../assets";
 import { convertToNaira } from "../../utils/convert-currency";
 import styles from "./product-grouping.module.css";
 
@@ -31,18 +32,18 @@ const ProductCard = ({
     unique,
 }: ProductCardProps) => {
     return (
-        <div className=' w-[14rem] md:w-[16rem] overflow-hidden flex-shrink-0 relative cursor-pointer'>
+        <div className=' w-[14rem] md:w-[17rem] overflow-hidden flex-shrink-0 relative cursor-pointer'>
             <div
                 className={`rounded-md h-[9rem] md:h-[10rem] w-full flex justify-center items-center  overflow-hidden ${
                     deliveryTime && " mb-2 md:mb-3"
-                }`}>
+                } bg-gray-300`}>
                 <Image
                     src={productImage}
                     alt={name}
-                    className='w-full h-full object-cover'
+                    className='w-full h-full object-cover hover:scale-125 transition duration-700'
                 />
             </div>
-            <div className=''>
+            <div className='flex flex-col gap-y-[0.15rem]'>
                 <h4 className='md:font-medium text-[#000000] truncate text-sm md:text-base font-bold'>
                     {name}
                 </h4>
@@ -58,12 +59,12 @@ const ProductCard = ({
                 )}
             </div>
             {discount && !unique && (
-                <div className='absolute bg-[#157145] text-[0.688rem] py-1 px-3 top-5 left-2 text-white rounded'>
+                <div className='absolute bg-[#157145] text-[0.688rem] py-1 px-3 top-3 left-2 text-white rounded'>
                     Get up to {discount}% off
                 </div>
             )}
             {unique && !discount && (
-                <div className='absolute bg-[#C20114] text-[0.688rem] py-1 px-3 top-5 left-2 text-white rounded'>
+                <div className='absolute bg-[#C20114] text-[0.688rem] py-1 px-3 top-3 left-2 text-white rounded'>
                     Only on Safelybuy
                 </div>
             )}
@@ -86,6 +87,12 @@ export const ProductGrouping = ({
     products,
     title,
 }: ProductGroupingProps) => {
+    const productsRef = useRef<HTMLDivElement>(null);
+
+    const handleProductNavigation = () => {
+        productsRef.current?.scrollBy(50, 0);
+    };
+
     return (
         <div className='relative'>
             {/* Product Grouping Header */}
@@ -107,7 +114,8 @@ export const ProductGrouping = ({
 
             {/* Product Grouping Body */}
             <div
-                className={`flex justify-between  gap-x-4 overflow-x-scroll ${styles.product__container}`}>
+                className={`flex justify-between  gap-x-5 overflow-x-scroll ${styles.product__container} scroll-smooth`}
+                ref={productsRef}>
                 {products.map(({ id, ...rest }) => (
                     <ProductCard key={id} {...rest} />
                 ))}
@@ -120,8 +128,9 @@ export const ProductGrouping = ({
                     style={{
                         boxShadow:
                             "-2.71154px 0px 8.67692px rgba(0, 0, 0, 0.4)",
-                    }}>
-                    <ArrowRight />
+                    }}
+                    onClick={handleProductNavigation}>
+                    <BaArrowIcon />
                 </button>
             </div>
         </div>

@@ -6,12 +6,12 @@ import { Footer } from "../components/footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <>
+        <div className='relative'>
             <Toaster position='top-right' />
             <Header />
             <Component {...pageProps} />
             <Footer />
-        </>
+        </div>
     );
 }
 

@@ -10,7 +10,7 @@ import mockRestaurantView from "../../../assets/images/restaurant-1.png";
 
 const RestaurantView = () => {
     return (
-        <div className='flex flex-col gap-y-12 -mt-12'>
+        <div className='flex flex-col gap-y-12 -mt-12 mb-12'>
             <RestaurantBanner
                 imageUrl={mockBanner}
                 deliveryTime='15 - 25mins'

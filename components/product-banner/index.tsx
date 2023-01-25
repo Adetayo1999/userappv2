@@ -58,7 +58,7 @@ export const ProductBanner = () => {
                             key={item.title}
                             className={` ${
                                 index === counter ? "flex" : "hidden"
-                            } flex bg-[#F3F3F3] rounded-[2rem] flex-col md:flex-row overflow-hidden md:h-[22rem]`}>
+                            } flex bg-[#F3F3F3] rounded-[1rem] flex-col md:flex-row overflow-hidden md:h-[22rem]`}>
                             <div className='md:flex-[0.5] flex justify-center items-center flex-col  gap-y-4 md:gap-y-6 p-4  h-[14rem] md:h-full '>
                                 <h2 className='font-medium  text-xl md:text-5xl text-center w-[80%] md:leading-[4rem]'>
                                     {item.title}

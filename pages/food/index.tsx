@@ -13,7 +13,7 @@ const TEXT_SLIDER = [
 
 const Food = () => {
     return (
-        <div className='flex flex-col gap-y-12'>
+        <div className='flex flex-col gap-y-12 mb-12'>
             <Navigation />
             <ProductSlider />
             <SafelybuySearch
